@@ -26,6 +26,8 @@ If your machine is stopped and then restarted, the public IP will change
     * Installing software
     * Downloading common files from the internet
 * The EC2 User Data Script runs with the root user
+* User data scripts entered as user data are executed with root user privileges
+* User data runs only during the boot cycle when you first launch an instance
   
 ## EC2 Meta Data
 * Information about your EC2 instance

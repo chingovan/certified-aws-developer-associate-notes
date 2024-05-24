@@ -65,6 +65,9 @@ What if you want to update each deployment
   - Longest deployment
   - Quick rollback in case of failures (new ASG will be terminated)
   - Best for production environments
+- Traffic splitting
+  - A canary testing deployment method.
+  - Suitable if you want to test the health of your new application version using a portion of incoming traffic, while keeping the rest of the traffic served by the old application version.
 
 #### Deployment Mechanism
 - Describe dependencies

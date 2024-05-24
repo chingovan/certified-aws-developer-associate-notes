@@ -165,7 +165,7 @@ Allows us to create REST APIs which can be public and accessible to the clients.
 
 ## Security and IAM Permissions
 
--IAM Permissions:
+- IAM Permissions:
     - We should create an IAM policy if other AWS services access the API Gateway from the same account
     - We can leverage "Sig v4" capability where IAM credentials are in headers
     - Authentication = IAM | Authorization = IAM Policy

@@ -81,11 +81,11 @@ aws lambda invoke --function-name hello-world --cli-binary-format raw-in-base64-
 
 ### Lambda integration with ELB (ALB)
 
-    - Used for exposing a HTTP(S) endpoint
-    - The function must be registered in a target group
-    - HTTP request is converted by the ALB to JSON and the JSON is passed to the function an input
-    - The ALB converts the lambda response back to JSON
-    - Multi-header values: by default they are disabled. When enabled HTTP headers and query string parameters that are sent with multiple values are shown as arrays within the Lambda event and response object
+  - Used for exposing a HTTP(S) endpoint
+  - The function must be registered in a target group
+  - HTTP request is converted by the ALB to JSON and the JSON is passed to the function an input
+  - The ALB converts the lambda response back to JSON
+  - Multi-header values: by default they are disabled. When enabled HTTP headers and query string parameters that are sent with multiple values are shown as arrays within the Lambda event and response object
 
 ### Lambda@Edge
 

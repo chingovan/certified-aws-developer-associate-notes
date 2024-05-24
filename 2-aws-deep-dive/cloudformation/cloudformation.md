@@ -65,6 +65,38 @@ CloudFormation.
     - Recommended way when you fully want to automate your flow
 
 #### CloudFormation Building Blocks
+Template example
+```
+{
+  "AWSTemplateFormatVersion" : "version date",
+  "Description" : "JSON string",
+  "Metadata" : {
+    template metadata
+  },
+  "Parameters" : {
+    set of parameters
+  },
+  "Rules" : {
+    set of rules
+  },
+  "Mappings" : {
+    set of mappings
+  },
+  "Conditions" : {
+    set of conditions
+  },
+  "Transform" : {
+    set of transforms
+  },
+  "Resources" : {
+    set of resources
+  },
+  "Outputs" : {
+    set of outputs
+  }
+}
+```
+
 - Templates components (one course section for each):
     1. Resources: your AWS resources declared in the template (MANDATORY)
     2. Parameters: the dynamic inputs for your template
@@ -72,6 +104,10 @@ CloudFormation.
     4. Outputs: References to what has been created
     5. Conditionals: List of conditions to perform resource creation
     6. Metadata
+    7. Rules
+    8. AWSTemplateFormatVersion: The version date
+    9. Description: The short description
+    10. Transform: The list of macro
 - Templates helpers:
     1. References
     2. Functions
@@ -139,6 +175,7 @@ CloudFormation.
 - They’re very useful for example if you define a network CloudFormation, and output the variables such as VPC ID and your Subnet IDs
 - It’s the best way to perform some collaborations cross stack, as you let expert handle their own part of the stack
 - You can’t delete a CloudFormation Stack if its outputs are being referenced by another CloudFormation stack
+- The output values is unique name within a single region
 
 ##### Outputs examples
 - Creating a SSH Security Group as part of one template
@@ -205,3 +242,5 @@ CloudFormation.
 - Stack Update Fails:
     - The stack automatically rolls back to the previous known working state
     - Ability to see in the log what happened and error messages
+
+### Stack Set?
