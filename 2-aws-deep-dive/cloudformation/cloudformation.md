@@ -9,7 +9,7 @@
 - That code would be deployed and create / update / delete our
 infrastructure
 
-#### What is CloudFormation?
+## What is CloudFormation?
 - CloudFormation is a declarative way of outlining your AWS Infrastructure, for any resources (most of them are supported).
 - For example, within a CloudFormation template, you want to:
     - I want a security group
@@ -27,7 +27,7 @@ infrastructure
 - The exam does not require you to actually write CloudFormation
 - The exam expects you to understand how to read CloudFormation
 
-#### Benefits of CloudFormation
+## Benefits of CloudFormation
 - Infrastructure as code
     - No resources are manually created, which is excellent for control
     - The code can be version controlled for example using git
@@ -48,14 +48,14 @@ infrastructure
     - Leverage existing templates on the web!
     - Leverage the documentation
 
-#### How CloudFormation works
+## How CloudFormation works
 - Templates have to be uploaded in S3 and then referenced in CloudFormation
 - To update a template, we can’t edit previous ones. We have to re-upload a new version of the template to AWS
 - Stacks are identified by a name
 - Deleting a stack deletes every single artifact that was created by
 CloudFormation.
 
-#### Deploying CloudFormation templates
+## Deploying CloudFormation templates
 - Manual way:
     - Editing templates in the CloudFormation Designer
     - Using the console to input parameters, etc
@@ -64,7 +64,7 @@ CloudFormation.
     - Using the AWS CLI (Command Line Interface) to deploy the templates
     - Recommended way when you fully want to automate your flow
 
-#### CloudFormation Building Blocks
+## CloudFormation Building Blocks
 Template example
 ```
 {
@@ -243,4 +243,8 @@ Template example
     - The stack automatically rolls back to the previous known working state
     - Ability to see in the log what happened and error messages
 
-### Stack Set?
+## Components
+- **Template**: The JSON or YAML text file that contains the instructions for building out the AWS Environment
+- **Stack**: The entier environment described by the template and created, updated and deleted as single unit
+- **StackSet**: extends the functionality of stacks by enabling you to create, update, or delete statck across multiple accounts and regions with a single operation
+- **Change Set** A summary of proposed changes to your stack that will allow you to see how those changes might impact your existing resource before implementing them.

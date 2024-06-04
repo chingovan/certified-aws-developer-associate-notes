@@ -57,7 +57,7 @@
     2 * 10 = 20 WCU
     ```
 
-    - 6 objects per second, 4.5 each
+    - 6 objects per second, 4.5KB each
 
     ```
     6 * 5 = 30 WCU (4.5 should be rounded to 5)
@@ -143,6 +143,8 @@
 - It is possible for a batch to fail, we can retry just the failed items
 
 ## Reading Data
+
+DynamoDB uses eventually consistent reads by default. Read operations (such as GetItem, Query, and Scan) provide a ConsistentRead parameter. If you set this parameter to true, DynamoDB uses strongly consistent reads during the operation.
 
 - **GetItem**
     - Read based on the primary key
@@ -355,8 +357,12 @@
     - VPC Endpoints to access DynamoDB without internet
     - Access fully controlled by IAM
     - Encryption at rest using KMS
-    - Encryption  in transit using SSL/TLS
-- Backup/Restore:
+    - Encryption in transit using SSL/TLS
+- Backup
+  - On-demain: Create backups when you choose
+  - Point-in-time recovery: Enable automatic, continues backups
+Both methods use S3. However, we cannot acess S3 bucket that are used for these backup. To create backups that we can download locally or use in other ASW services like Data Pipeline, EMR or Glue
+- Restore:
     - Point in time restore la RDS
     - No performance impact
 - Global Table:

@@ -43,7 +43,12 @@
     - BeforeInstall
     - AfterInstall
     - ApplicationStart
-    - **ValidateService: really important**
+    - **ValidateService (really important)**: ValidateService is the last deployment lifecycle event. It is used to verify the deployment was completed successfully.
+    - BeforeBlockTraffic
+    - BlockTraffic
+    - AfterBlockTraffic
+    - BeforeAllowTraffic
+    - AllowTraffic
 
 #### Deployment Config
 - Configs:

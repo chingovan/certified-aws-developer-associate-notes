@@ -27,8 +27,65 @@ Step Scaling scales your cluster on various lengths of steps based on different 
 ### Secrets Manager
 AWS Secrets Manager enables you to easily rotate, manage, and retrieve database credentials, API keys, and other secrets throughout their lifecycle. Users and applications retrieve secrets with a call to Secrets Manager APIs, eliminating the need to hardcode sensitive information in plain text. Secrets Manager offers secret rotation with built-in integration for Amazon RDS, Amazon Redshift, and Amazon DocumentDB.
 
+### AWS Private Certificate Authority
+An AWS Private CA hierarchy provides strong security and restrictive access controls for the most-trusted root CA at the top of the trust chain, while allowing more permissive access and bulk certificate issuance for subordinate CAs lower on the chain.
+
+With AWS Private CA, you can create private certificates to identify resources and protect data. You can create versatile certificate and CA configurations to identify and protect your resources, including servers, applications, users, devices, and containers.
+
+The service offers direct integration with AWS IAM, and you can control access to AWS Private CA with IAM policies.
+
 ### SSM Parameter Store
 AWS Systems Manager Parameter Store provides secure, hierarchical storage for configuration data management and secrets management. You can store data such as passwords, database strings, and license codes as parameter values. SSM Parameter Store cannot be used to automatically rotate the database credentials.
 
 ### Systems Manager
 AWS Systems Manager gives you visibility and control of your infrastructure on AWS. Systems Manager provides a unified user interface so you can view operational data from multiple AWS services and allows you to automate operational tasks across your AWS resources. Systems Manager cannot be used to store your secrets securely and automatically rotate the database credentials.
+
+### Security Token Service
+AWS provides AWS Security Token Service (AWS STS) as a web service that enables you to request temporary, limited-privilege credentials for users. This guide describes the AWS STS API.
+
+By default, AWS Security Token Service (AWS STS) is available as a global service, and all AWS STS requests go to a single endpoint at https://sts.amazonaws.com
+
+AWS STS supports AWS CloudTrail, a service that records AWS calls for your AWS account and delivers log files to an Amazon S3 bucket. By using information collected by CloudTrail, you can determine the requests successfully sent to AWS STS, as well as who sent the request, and when it was sent
+
+
+### WAF
+AWS WAF is a Web Application Firewall that lets you monitor the HTTP(S) requests that are forwarded to your protected web application resources. You can protect the following resource types:
+- Amazon CloudFront distribution
+- Amazon API Gateway REST API
+- Application Load Balancer
+- AWS AppSync GraphQL API
+- Amazon Cognito user pool
+- AWS App Runner service
+- AWS Verified Access instance
+
+AWS WAF lets you control access to your content. Based on criteria that you specify, such as the IP addresses that requests originate from or the values of query strings, the service associated with your protected resource responds to requests either with the requested content, with an HTTP 403 status code (Forbidden), or with a custom response.
+
+
+### AWS Shield
+AWS Shield is a managed DDoS protection service that safeguards applications running on AWS.
+
+
+## Deployment
+### CodeDeploy
+- **In-place**: The application on each instance in the deployment group is stopped, the latest application revision is installed, and the new version of the application is started and validated.
+- Blue/green
+
+### EC2
+- All at once
+- Rolling
+- Immutable
+- Traffic splitting	
+- **Blue/green**: The instances in a deployment group (the original environment) are replaced by a different set of instances
+
+### Lambda
+- **Blue/green**: Traffic is shifted in increments according to a canary, linear, or all-at-once deployment configuration.
+
+### Beanstalk
+- All at once
+- Rolling
+- Rolling with additional batch
+- Immutable
+- Traffic splitting
+
+### CloudFormation
+- Blue/green: Traffic is shifted from your current resources to your updated resources as part of an AWS CloudFormation stack update.

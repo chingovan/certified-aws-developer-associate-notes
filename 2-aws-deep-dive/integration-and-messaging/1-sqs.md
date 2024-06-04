@@ -4,7 +4,7 @@ SQS is a service that manages and operates message oriented middleware. It enabl
 
 What's a queue?
     - A form of asynchronous service to service communication used in multiple application architectures.
-    - Messages are stored on teh queue until they are processed and deleted
+    - Messages are stored on the queue until they are processed and deleted
 
 ## Standard Queue
 
@@ -26,7 +26,7 @@ What's a queue?
     - up to 15-minute delay
 - Default is 0 seconds making messages available right away
 - You can set a default at queue level
-- YOu can override the default using the **DelaySeconds** parameter
+- You can override the default using the **DelaySeconds** parameter
 
 ### Producing Messages
 

@@ -1,6 +1,6 @@
 # Certified AWS Associate Developer Notes
 
-### 2023 AWS developer associate exam 
+2023 AWS developer associate exam 
 
 ## Table of contents
 
